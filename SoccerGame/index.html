@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Football Guessing Game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>The Ultimate Football Guessing Game!</h1>
+        <p>I'm thinking of a player with a legendary (or notorious) career. Who is it?</p>
+
+        <div class="hints-area">
+            <h3>📝 Clues:</h3>
+            <ul id="hints-list">
+                <li class="loading-hint">Loading player...</li>
+            </ul>
+        </div>
+
+        <input type="text" id="player-guess" placeholder="Enter player name..." autofocus>
+        
+        <div class="button-group">
+            <button id="submit-guess" class="primary-btn">Guess!</button>
+            <button id="reset-game" class="secondary-btn" style="display: none;">Play Another Round!</button>
+        </div>
+        
+
+        <p id="message" class="message"></p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

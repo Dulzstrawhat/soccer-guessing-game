@@ -1,0 +1,158 @@
+/* ------------------------------------------- */
+/* 1. Global Reset & Body Styling */
+/* ------------------------------------------- */
+
+/* Use a modern, easy-to-read font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    /* Dark background for a 'night game' feel */
+    background-color: #1a1a2e; 
+    color: #e0e0e0; /* Light gray text for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* ------------------------------------------- */
+/* 2. Layout & Container */
+/* ------------------------------------------- */
+
+.game-container {
+    background-color: #0f0f1a; /* Even darker inner container */
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Deep shadow */
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border: 3px solid #00ff6e; /* Bright green border for theme */
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    color: #00ff6e; /* Bright green title */
+    text-transform: uppercase;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #e0e0e0;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* ------------------------------------------- */
+/* 3. Input, Buttons, and Hints */
+/* ------------------------------------------- */
+
+#player-guess {
+    width: 80%;
+    padding: 12px;
+    margin: 20px 0 15px 0;
+    border: 2px solid #00ff6e;
+    border-radius: 6px;
+    background-color: #2b2b4a; /* Dark input field */
+    color: #ffffff;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#player-guess:focus {
+    outline: none;
+    border-color: #ffffff; /* Highlight on focus */
+}
+
+/* Style for all buttons */
+.button-group button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    margin: 0 5px;
+}
+
+/* Primary Guess button */
+.primary-btn {
+    background-color: #00ff6e; /* Bright green */
+    color: #1a1a2e;
+}
+
+.primary-btn:hover {
+    background-color: #00e663;
+    transform: translateY(-2px);
+}
+
+/* Secondary Reset button */
+.secondary-btn {
+    background-color: #4a4a6b;
+    color: #ffffff;
+}
+
+.secondary-btn:hover {
+    background-color: #5b5b7c;
+    transform: translateY(-2px);
+}
+
+/* Hints List */
+#hints-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 10px;
+}
+
+#hints-list li {
+    background-color: #2b2b4a;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 5px solid #00ff6e; /* Highlight border */
+    animation: fadeIn 0.5s ease-out; /* Smooth reveal */
+}
+
+/* ------------------------------------------- */
+/* 4. Message Area (Feedback) */
+/* ------------------------------------------- */
+
+.message {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 25px;
+    /* Default style */
+    background-color: #1a1a2e;
+}
+
+.message.success {
+    background-color: #28a745; /* Green for success */
+    color: white;
+}
+
+.message.warning {
+    background-color: #ffc107; /* Yellow for wrong guess/new hint */
+    color: #1a1a2e;
+}
+
+.message.error {
+    background-color: #dc3545; /* Red for game over */
+    color: white;
+}
+
+/* ------------------------------------------- */
+/* 5. Animations (For fun visual feedback) */
+/* ------------------------------------------- */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
